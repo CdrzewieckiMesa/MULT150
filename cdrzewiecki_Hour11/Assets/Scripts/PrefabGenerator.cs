@@ -5,6 +5,26 @@ public class PrefabGenerator : MonoBehaviour
 {
     public GameObject prefab;
 
+    void Start()
+    {
+        int count = 0;
+        /* This is for step 11.6.
+        for (int i = 0; i < 10; i++)
+        {
+            count++;
+            print(count);
+            Instantiate(prefab);
+        }
+        */
+
+        for (var i = 0; i < 10; i++)
+        {
+            Instantiate(prefab, new Vector3(count * 3.16f, 0, 0), Quaternion.identity);
+            count++;
+        }
+
+    }
+
     void Update()
     {
         // Whenever we hit the B key we will generate a prefab at the
